@@ -6,7 +6,7 @@ I originally created this simple script to log messages from ESPHome nodes but I
 
 ## mqtt-logger.py
 
-The main script can be run outside of Docker but was intended to run inside a container. Use it how need it.
+The main script can be run outside of Docker but was intended to run inside a container. Use it how you need it.
 
 Running the script with no arguments will cause it to look for a configuration file in /config/configuration.yaml, which will probably fail. Use the '--config' option to set an explicit path to a configuration.
 
