@@ -1,0 +1,70 @@
+
+# This is a sample configuration file. Defaults are commented out and required settings are uncomented.
+# Customize as needed and put it in whatever volume you map to /config in the container.
+
+# The logger area defines default log settings to use for any topic that doesn't define them explicitly.
+logging:
+
+    # Define the root for log files with relative paths.
+    # This container path is normally mapped to a local directory with a volume mapping.
+    # root: /logs
+    
+    # Define the format of a logged message.
+    # See python's logging module for syntax.
+    # format: '%(message)s'
+
+    # Define the maximum size of each log file. A suffix of 'K', 'M', or 'G' can be used.
+    # maxBytes: 10M
+    
+    # Define the number of backup log files. When a log is rotated and renamed, a maximum of this
+    # many files will be kept.
+    # backupCount: 3
+    
+# The brokers area defines a list of one or more connections to brokers.
+# Only non-encrypted TCP connections are currently supported.
+brokers:
+      # Define the name of broker, used in a topic, must be unique.
+    - name: default
+      
+      # Define the IP address or hostname of the broker.
+      address: mqtt
+      
+      # Define the port of the broker.
+      # port: 1883
+      
+      # If authentication is required, set the username and password, otherwise an anonymous connection will be made.
+      # username: None
+      # password: None
+
+# The topics area defines a list of one or more topics to subscribe to and log to files.
+topics:
+
+      # Define the topic to subscribe to.
+    - topic: esphome/some-node/debug
+    
+      # Define the name of the broker (defined above) to use.
+      broker: default
+      
+      # Define the name of the log file. Relative paths are relative to the root defined in the logging area.
+      log: some-node.log
+
+      # Define the MQTT qos for the subscription.
+      # qos: 0
+      
+      # Define the encoding of the subscribed data. Topic data is returned as binary so decoding it to a string is necessary.
+      # encoding: utf-8
+      
+      # Define the format of a logged message.
+      # See python's logging module for syntax.
+      # Local override for same setting in logging area.
+      # format: '%(message)s'
+
+      # Define the maximum size of each log file. A suffix of 'K', 'M', or 'G' can be used.
+      # Local override for same setting in logging area.
+      # maxBytes: 10M
+    
+      # Define the number of backup log files. When a log is rotated and renamed, a maximum of this
+      # many files will be kept.
+      # Local override for same setting in logging area.
+      # backupCount: 3
+

@@ -1,0 +1,20 @@
+
+version: '3.8'
+
+services:
+
+    mqtt-logger:
+        image: local/mqtt-logger:latest
+        restart: unless-stopped
+        networks:
+          homeautomation:
+        volumes:
+          - /local/ha/mqtt-logger/config:/config
+          - /local/ha/mqtt-logger/logs:/logs
+          - /etc/localtime:/etc/localtime:ro
+        depends_on:
+          - mosquitto
+      
+ networks:
+  homeautomation:
+      
