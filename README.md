@@ -15,3 +15,9 @@ Running the script with no arguments will cause it to look for a configuration f
 Clone the repository and run the "build" script to build your own image. You can change the build script to customize the build command however you'd like.
 
 I've included a simple docker-compose file that shows how I use the image in my setup. I've excluded all the other services I use for clarity.
+
+## Limitations
+
+1. Only TCP connections are supported. No websockets.
+1. Only non-encrypted connections are supported. No SSL/TLS.
+

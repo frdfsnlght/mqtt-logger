@@ -35,7 +35,7 @@ class Broker:
 
     def __init__(self, conf):
         self.name = conf.get('name', None)
-        self.address = conf.get('address', None)
+        self.address = conf.get('address', 'localhost')
         self.port = conf.get('port', 1883)
         self.username = conf.get('username', None)
         self.password = conf.get('password', None)

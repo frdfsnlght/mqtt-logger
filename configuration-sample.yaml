@@ -27,7 +27,7 @@ brokers:
     - name: default
       
       # Define the IP address or hostname of the broker.
-      address: mqtt
+      # address: localhost
       
       # Define the port of the broker.
       # port: 1883
